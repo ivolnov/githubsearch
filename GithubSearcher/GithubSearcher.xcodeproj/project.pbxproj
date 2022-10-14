@@ -129,7 +129,6 @@
 			children = (
 				9EE6A41D28F9367B00A22FD6 /* App */,
 				9E0E231328F912CD00A0A9EB /* Network */,
-				9E36F34028F575000047C35B /* Preview Content */,
 				9E36F36728F7E89F0047C35B /* Service */,
 				9E36F36628F7E8980047C35B /* Presentation */,
 			);
@@ -235,6 +234,7 @@
 		9EE6A41D28F9367B00A22FD6 /* App */ = {
 			isa = PBXGroup;
 			children = (
+				9E36F34028F575000047C35B /* Preview Content */,
 				9E36F33D28F575000047C35B /* Assets.xcassets */,
 				9E36F33928F574FF0047C35B /* GithubSearcherApp.swift */,
 				9E36F33F28F575000047C35B /* GithubSearcher.entitlements */,
@@ -538,7 +538,7 @@
 				CODE_SIGN_ENTITLEMENTS = GithubSearcher/App/GithubSearcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GithubSearcher/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"GithubSearcher/App/Preview Content\"";
 				DEVELOPMENT_TEAM = 7446HG6F59;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
@@ -576,7 +576,7 @@
 				CODE_SIGN_ENTITLEMENTS = GithubSearcher/App/GithubSearcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"GithubSearcher/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"GithubSearcher/App/Preview Content\"";
 				DEVELOPMENT_TEAM = 7446HG6F59;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
