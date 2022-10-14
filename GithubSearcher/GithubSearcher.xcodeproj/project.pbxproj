@@ -127,9 +127,7 @@
 		9E36F33828F574FF0047C35B /* GithubSearcher */ = {
 			isa = PBXGroup;
 			children = (
-				9E36F33D28F575000047C35B /* Assets.xcassets */,
-				9E36F33928F574FF0047C35B /* GithubSearcherApp.swift */,
-				9E36F33F28F575000047C35B /* GithubSearcher.entitlements */,
+				9EE6A41D28F9367B00A22FD6 /* App */,
 				9E0E231328F912CD00A0A9EB /* Network */,
 				9E36F34028F575000047C35B /* Preview Content */,
 				9E36F36728F7E89F0047C35B /* Service */,
@@ -232,6 +230,16 @@
 				9E95DEBB28F8363B00621229 /* WebView.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		9EE6A41D28F9367B00A22FD6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				9E36F33D28F575000047C35B /* Assets.xcassets */,
+				9E36F33928F574FF0047C35B /* GithubSearcherApp.swift */,
+				9E36F33F28F575000047C35B /* GithubSearcher.entitlements */,
+			);
+			path = App;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -527,7 +535,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = GithubSearcher/GithubSearcher.entitlements;
+				CODE_SIGN_ENTITLEMENTS = GithubSearcher/App/GithubSearcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GithubSearcher/Preview Content\"";
@@ -565,7 +573,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = GithubSearcher/GithubSearcher.entitlements;
+				CODE_SIGN_ENTITLEMENTS = GithubSearcher/App/GithubSearcher.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"GithubSearcher/Preview Content\"";
