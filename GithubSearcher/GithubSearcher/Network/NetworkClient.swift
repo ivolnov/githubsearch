@@ -18,18 +18,43 @@ final class NetworkClientImpl {
         self.decoder = decoder
     }
     
-    func call<Result: Codable>(endpoint: Endpoint) -> AnyPublisher<Result, Error> {
-        session
-            .dataTaskPublisher(for: endpoint.url()!)
-            .tryMap() { element -> Data in
-                guard
-                    let httpResponse = element.response as? HTTPURLResponse,
-                    httpResponse.statusCode == 200 else {
-                    throw URLError(.badServerResponse)
-                }
-                return element.data
+    func call<Model: Codable>(endpoint: Endpoint) -> AnyPublisher<Result<Model, Error>, Never>  {
+        Deferred {
+            
+            Future { promise in
+                
+                let url = endpoint.url()!
+                
+                let dataTask = self.session
+                    .dataTask(with: url) { data, response, error in
+                        if let error = error {
+                            promise(.success(.failure(error)))
+                            return
+                        }
+                        guard
+                            let httpResponse = response as? HTTPURLResponse,
+                            httpResponse.statusCode == 200
+                        else {
+                            promise(.success(.failure(URLError(.badServerResponse))))
+                            return
+                        }
+                        
+                        guard let data = data else {
+                            promise(.success(.failure(URLError(.badServerResponse))))
+                            return
+                        }
+                        
+                        do {
+                            let model = try self.decoder.decode(Model.self, from: data)
+                            promise(.success(.success(model)))
+                        } catch let error {
+                            promise(.success(.failure(error)))
+                        }
+                    }
+                
+                dataTask.resume()
             }
-            .decode(type: Result.self, decoder: decoder)
-            .eraseToAnyPublisher()
+        }
+        .eraseToAnyPublisher()
     }
 }

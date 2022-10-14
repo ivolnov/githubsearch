@@ -10,7 +10,7 @@ import Combine
 
 
 protocol GitHubSearchService {
-    func repositories(query: String) -> AnyPublisher<GitHubRepositoriesNetworkModel, Error>
+    func repositories(query: String) -> AnyPublisher<Result<GitHubRepositoriesNetworkModel, Error>, Never>
 }
 
 final class GitHubSearchServiceImpl {
@@ -26,7 +26,7 @@ final class GitHubSearchServiceImpl {
 
 extension GitHubSearchServiceImpl: GitHubSearchService {
     
-    func repositories(query: String) -> AnyPublisher<GitHubRepositoriesNetworkModel, Error> {
+    func repositories(query: String) -> AnyPublisher<Result<GitHubRepositoriesNetworkModel, Error>, Never> {
         let endpoint = Api.Github.Search.repositories(query: query)
         return client.call(endpoint: endpoint)
     }
