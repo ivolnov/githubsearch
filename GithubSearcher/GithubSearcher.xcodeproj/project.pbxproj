@@ -127,10 +127,11 @@
 		9E36F33828F574FF0047C35B /* GithubSearcher */ = {
 			isa = PBXGroup;
 			children = (
-				9E0E231328F912CD00A0A9EB /* Network */,
+				9E36F33D28F575000047C35B /* Assets.xcassets */,
+				9E36F33928F574FF0047C35B /* GithubSearcherApp.swift */,
 				9E36F33F28F575000047C35B /* GithubSearcher.entitlements */,
+				9E0E231328F912CD00A0A9EB /* Network */,
 				9E36F34028F575000047C35B /* Preview Content */,
-				9E36F36B28F80D6B0047C35B /* App */,
 				9E36F36728F7E89F0047C35B /* Service */,
 				9E36F36628F7E8980047C35B /* Presentation */,
 			);
@@ -189,15 +190,6 @@
 				9E95DEB228F8359600621229 /* PlaceholderView.swift */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		9E36F36B28F80D6B0047C35B /* App */ = {
-			isa = PBXGroup;
-			children = (
-				9E36F33D28F575000047C35B /* Assets.xcassets */,
-				9E36F33928F574FF0047C35B /* GithubSearcherApp.swift */,
-			);
-			path = App;
 			sourceTree = "<group>";
 		};
 		9E36F36D28F80DA90047C35B /* RepositoryDetail */ = {
