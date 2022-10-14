@@ -35,22 +35,22 @@ final class RepositoryListViewModel: ObservableObject {
             .filter { query in query.count > 3 }
             .share()
         
-//        queries
-//            .map { _ in true }
-//            .receive(on: RunLoop.main)
-//            .assign(to: \.isLoading, on: self)
-//            .store(in: &bag)
+        queries
+            .map { _ in true }
+            .receive(on: RunLoop.main)
+            .assign(to: \.isLoading, on: self)
+            .store(in: &bag)
         
         let repositories = queries
             .throttle(for: .seconds(1), scheduler: RunLoop.main, latest: true)
             .flatMap { [unowned self] query in service.repositories(query: query) }
             .catch { _ in Empty<GitHubRepositoriesNetworkModel, Never>() }
      
-//        repositories
-//            .map { _ in false }
-//            .receive(on: RunLoop.main)
-//            .assign(to: \.isLoading, on: self)
-//            .store(in: &bag)
+        repositories
+            .map { _ in false }
+            .receive(on: RunLoop.main)
+            .assign(to: \.isLoading, on: self)
+            .store(in: &bag)
         
         repositories
             .map { [unowned self] model in convert(model) }
